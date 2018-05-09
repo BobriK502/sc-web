@@ -12,6 +12,7 @@ import Base from "components/base";
 import Map from "components/map";
 import SearchButton from "components/searchButton";
 import SearchInput from "components/searchInput";
+import ReqSystem from "req_system/index";
 import "components/searchPanel";
 
 $(document).ready(function () {
@@ -20,4 +21,8 @@ $(document).ready(function () {
     new Map;
     new SearchButton;
     new SearchInput;
+    const req_sys = new ReqSystem();
+    req_sys.sctp._check().then(res=> console.log(res))
 });
+
+
